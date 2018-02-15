@@ -5,6 +5,10 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## [0.0.3] - 2018-02-15
+### Added
+- Maintenance controller
+- itemlist view
 
 ## [0.0.2] - 2018-02-15
 ### Changed
