@@ -5,6 +5,11 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+
+## [0.0.2] - 2018-02-15
+### Changed
+- fixed incorrect link
+
 ## [0.0.2] - 2018-02-15
 ### Added
 - by_priority and by_category views
