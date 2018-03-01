@@ -14,11 +14,11 @@ class Views extends Application
     }
 
 
-    function makePrioritizedPanel($tasks) {
+    function makePrioritizedPanel($tasks)
+    {
 
         // extract the undone tasks
-        foreach ($tasks as $task)
-        {
+        foreach ($tasks as $task) {
             if ($task->status != 2)
                 $undone[] = $task;
         }
@@ -27,26 +27,51 @@ class Views extends Application
         usort($undone, "orderByPriority");
 
         // substitute the priority name
-        foreach ($undone as $task)
-        {
+        foreach ($undone as $task) {
             $task->priority = $this->app->priority($task->priority);
         }
 
         $converted = array();
-        foreach ($undone as $task)
-        {
-            $converted[] = (array) $task;
+        foreach ($undone as $task) {
+            $converted[] = (array)$task;
         }
 
         $parms = ['display_tasks' => $converted];
-        return $this->parser->parse('by_priority',$parms,true);
+        $role = $this->session->userdata('userrole');
+        $parms['completer'] = ($role == ROLE_OWNER) ? '/views/complete' : '#';
+
+        return $this->parser->parse('by_priority', $parms, true);
     }
 
     function makeCategorizedPanel($tasks)
     {
         $parms = ['display_tasks' => $this->tasks->getCategorizedTasks()];
+        $role = $this->session->userdata('userrole');
+        $parms['completer'] = ($role == ROLE_OWNER) ? '/views/complete' : '#';
         return $this->parser->parse('by_category', $parms, true);
     }
+    function complete()
+    {
+        $role = $this->session->userdata('userrole');
+        if ($role != ROLE_OWNER)
+        {
+            redirect('/views');
+        }
+        // look for flagged tasks
+        foreach($this->input->post() as $key=>$value)
+        {
+            if (substr($key, 0, 4) == 'task')
+            {
+                // find the associated task
+                $taskid = substr($key, 4);
+                $task = $this->tasks->get($taskid);
+                $task->status = 2;
+                $this->tasks->update($task);
+            }
+        }
+        $this->index();
+    }
+
 }
 
 // return -1, 0, or 1 of $a's priority is higher, equal to, or lower than $b's
@@ -59,3 +84,4 @@ function orderByPriority($a, $b)
     else
         return 0;
 }
+
