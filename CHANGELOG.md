@@ -4,7 +4,13 @@ All notable changes to this project will be documented in this file.
 
 
 ## [Unreleased]
+## [0.0.6] - 2018-03-01
+### Added
+- pagination navbar
 
+### Changed
+- Modified Maintenance page so that it shows 10 items at a time
+- itemlist view now shows pagination navbar
 ## [0.0.5] - 2018-02-15
 ### Added
 - Help wanted controller
