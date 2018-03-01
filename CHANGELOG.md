@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
+## [0.1.0] - 2018-03-01
+### Added
+- task now validated
+- can add and edit tasks as the Owner in Maintenance view
+
+### Changed
+- made sure new tasks had proper fields set
+
+### Known Bug
+- If adding to the list, will add the submit buttons text to the csv file.
+
 ## [0.0.9] - 2018-03-01
 ### Added
 - onetaskx view
