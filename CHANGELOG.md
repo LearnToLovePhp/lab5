@@ -2,8 +2,20 @@
 
 All notable changes to this project will be documented in this file.
 
-
 ## [Unreleased]
+## [0.0.7] - 2018-03-01
+### Added
+- Roles controller
+- Roles item on menubar
+- session library autoloaded
+- Session save location
+
+
+### Changed
+- Mtce page now shows role
+- .gitignore will ignore session files in tmp
+
+
 ## [0.0.6] - 2018-03-01
 ### Added
 - pagination navbar
