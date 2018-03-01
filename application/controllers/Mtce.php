@@ -12,7 +12,8 @@ public function index()
 
 private function show_page($tasks)
 {
-    $this->data['pagetitle'] = 'TODO List Maintenance';
+    $role = $this->session->userdata('userrole');
+    $this->data['pagetitle'] = 'TODO List Maintenance ('. $role . ')';
     // build the task presentation output
     $result = '';
     foreach($tasks as $task)
