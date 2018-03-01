@@ -8,8 +8,6 @@ All notable changes to this project will be documented in this file.
 - onetaskx view
 - owner now sees "New item" button
 
-### Changed
-- both order by priority and order by category can complete tasks
 
 ## [0.0.8] - 2018-03-01
 ### Added
