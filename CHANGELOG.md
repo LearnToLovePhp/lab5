@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
+## [0.1.1] - 2018-03-03
+### Added
+- Additional task-add form fields
+
+### Changed
+- Taskedit form now populates additional fields with options
+
 ## [0.1.0] - 2018-03-01
 ### Added
 - task now validated
