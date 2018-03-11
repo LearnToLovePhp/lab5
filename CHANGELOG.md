@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
+## [0.1.2] - 2018-03-11
+### Added
+- PHPunit framework
+- Setters for Task model
+- Unit tests for task and task list
+- Application bootstrap file
+
+### Changed
+- modified gitignore to ignore unit test output and composer.lock
+
+
+
+
 ## [0.1.1] - 2018-03-03
 ### Added
 - Additional task-add form fields
