@@ -4,6 +4,13 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## [0.1.3.2] - 2018-03-22
+### Added
+- XML loading for TaskList
+### Changed
+- Modified load function for XML_model
+- changed xml to task from desc
+
 ## [0.1.3.1] - 2018-03-22
 ### Changed
 - xml file to have id as separate subfield rather than tag
