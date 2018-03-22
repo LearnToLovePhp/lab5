@@ -4,6 +4,11 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+
+## [0.1.3.3] - 2018-03-22
+### Changed
+- Improved load function - moved from XML model to Tasks
+
 ## [0.1.3.2] - 2018-03-22
 ### Added
 - XML loading for TaskList
