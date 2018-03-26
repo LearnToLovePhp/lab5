@@ -1,11 +1,13 @@
 <?php
 
-class Tasks extends CSV_Model {
-
+class Tasks extends XML_Model {
+    private $CI;
     public function __construct()
     {
-        parent::__construct(APPPATH . '../data/tasks.csv', 'id');
+        parent::__construct(APPPATH . '../data/tasks.xml', 'id');
+        $this->CI = &get_instance();
     }
+
 
     function getCategorizedTasks()
     {
@@ -19,7 +21,7 @@ class Tasks extends CSV_Model {
         // substitute the category name, for sorting
         foreach ($undone as $task)
             if (!isset($task->group))
-                $task->group = $this->app->group($task->group);
+                $task->group = $this->CI->app->group($task->group);
 
         // order them by category
         usort($undone, "orderByCategory");
@@ -30,6 +32,7 @@ class Tasks extends CSV_Model {
 
         return $converted;
     }
+
 
     public function rules()
     {
